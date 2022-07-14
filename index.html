@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="dist/output.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/3037e7890d.js" crossorigin="anonymous"></script>
+    <title>Bookshelf Apps</title>
+  </head>
+  <body>
+    <header class="bg-primary flex justify-center text-center p-3">
+      <h1 class="text-3xl text-white font-bold">Bookshelf Apps</h1>
+    </header>
+    <main class="flex flex-col lg:flex-row">
+      <section class="flex-1 p-2 h-[90vh] border">
+        <div class="form-input">
+          <h2 class="text-center text-2xl font-bold text-dark my-2">Tambah Buku Baru</h2>
+          <form id="inputBook">
+            <div class="w-full mx-auto">
+              <div class="w-full px-4 mb-5">
+                <label for="bookTitle" class="text-base font-bold text-dark">Judul</label>
+                <input type="text" name="bookTitle" id="bookTitle" class="border w-full p-3 rounded-md bg-slate-200 focus:ring-1 focus:ring-primary focus:border-primary focus:outline-none" required />
+              </div>
+              <div class="w-full px-4 mb-5">
+                <label for="BookAuthor" class="text-base font-bold text-dark">Penulis</label>
+                <input type="text" name="bookAuthor" id="bookAuthor" class="border w-full p-3 rounded-md bg-slate-200 focus:ring-1 focus:ring-primary focus:border-primary focus:outline-none" required />
+              </div>
+              <div class="w-full px-4 mb-5">
+                <label for="  " class="text-base font-bold text-dark">Tahun</label>
+                <input type="number" name="bookYear" id="bookYear" class="border w-full p-3 rounded-md bg-slate-200 focus:ring-1 focus:ring-primary focus:border-primary focus:outline-none" required />
+              </div>
+              <div class="w-full px-4 mb-5">
+                <label for="isComplete" class="text-base font-bold text-dark">Selesai dibaca</label>
+                <input type="checkbox" name="isComplete" id="isComplete" class="p-3" />
+              </div>
+              <div class="w-full px-4 mb-5">
+                <button type="submit" class="btn-add-book">
+                  <i class="fa-solid fa-floppy-disk"></i>
+                  Masukan buku ke rak <strong>Belum Selesai Dibaca</strong>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="form-search my-2">
+          <h2 class="text-center text-2xl font-bold text-dark mt-8 mb-5">Cari Buku</h2>
+          <div class="w-full text-center">
+            <form id="searchBook">
+              <div class="mx-auto px-4 mb-3 relative">
+                <span class="absolute top-3 left-8 opacity-50"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <button type="button" id="btnReset" class="hover:text-red-600 hidden top-3 right-8">
+                  <i class="fa-solid fa-xmark"></i>
+                </button>
+                <input type="text" name="searchTitle" id="searchTitle" class="border p-3 pl-12 w-full mb-2 rounded-md bg-slate-200 focus:ring-1 focus:ring-primary focus:border-primary focus:outline-none" placeholder="search..." />
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="flex-1 p-2 h-[90vh] border overflow-y-scroll">
+        <h2 class="text-center text-2xl font-bold text-dark mt-2 mb-5">Belum Selesai Dibaca</h2>
+        <div id="incompleteBookshelfList"></div>
+      </section>
+      <section class="flex-1 p-2 h-[90vh] border overflow-y-scroll">
+        <h2 class="text-center text-2xl font-bold text-dark mt-2 mb-5">Selesai Dibaca</h2>
+        <div id="completeBookshelfList"></div>
+      </section>
+    </main>
+    <script src="dist/script.js"></script>
+    <script src="dist/sweetalert2.all.min.js"></script>
+  </body>
+</html>
